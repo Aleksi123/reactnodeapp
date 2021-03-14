@@ -1,5 +1,6 @@
 # backend
 /node_modules
+/config/config.json
 
 # frontend
 # dependencies

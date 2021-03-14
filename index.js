@@ -1,23 +1,15 @@
-const express = require('express')
-const { Sequelize } = require('sequelize');
+const express = require("express");
+const { sequelize } = require("./models");
 
-const app = express()
-const port = 4000
+const app = express();
+const port = 4000;
 
-// Connect to MySQL DB using Sequelize ORM
-const sequelize = new Sequelize('db', 'user', 'password', {
-  host: 'localhost',
-  dialect: 'mysql'
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
-sequelize
-  .authenticate()
-  .then(() => console.log('Connected to db.'))
-  .catch(error => console.log('Unable to connect to the database:', error))
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(port, async () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+  await sequelize.authenticate();
+  console.log("Connected to db.");
+});
