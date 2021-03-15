@@ -4,9 +4,9 @@ const { sequelize } = require("./models");
 const app = express();
 const port = 4000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use(express.json());
+
+app.use('/api/todos', require('./routes/api/todos'));
 
 app.listen(port, async () => {
   console.log(`Example app listening at http://localhost:${port}`);
