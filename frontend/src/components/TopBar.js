@@ -1,6 +1,6 @@
-import React from 'react'
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import React from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 export default function TopBar() {
   return (
@@ -16,5 +16,5 @@ export default function TopBar() {
         </Navbar.Collapse>
       </Navbar>
     </div>
-  )
+  );
 }

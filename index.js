@@ -6,7 +6,7 @@ const port = 4000;
 
 app.use(express.json());
 
-app.use('/api/todos', require('./routes/api/todos'));
+app.use("/api/todos", require("./routes/api/todos"));
 
 app.listen(port, async () => {
   console.log(`Example app listening at http://localhost:${port}`);
