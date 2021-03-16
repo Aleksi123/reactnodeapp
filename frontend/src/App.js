@@ -1,11 +1,17 @@
 import "./App.css";
 import TopBar from "./components/TopBar";
+import { Provider } from 'react-redux';
+import store from './store';
+import TodoList from "./components/TodoList";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <TopBar />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <TopBar />
+        <TodoList />
+      </div>
+    </Provider>
   );
 }
 
